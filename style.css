@@ -1,0 +1,290 @@
+  body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+      }
+
+      /* Header sits over hero */
+      header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+        padding: 0 1rem;
+      }
+
+      .header-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75rem 0;
+      }
+      .brand {
+        font-size: 3rem;
+        font-weight: 200;
+        color: #d6ff00;
+      }
+      .contact-btn {
+        background: #d6ff00;
+        border-radius: 11px;
+        padding: 0.4rem 1rem;
+        font-weight: 600;
+        color: #000;
+        text-decoration: none;
+      }
+      .contact-btn:hover {
+        background: #bde600;
+      }
+
+      .header-nav {
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      }
+      .header-nav .nav-link {
+        color: #fff;
+        font-weight: 500;
+        padding: 0.75rem 3rem;
+      }
+      .header-nav .nav-link:hover {
+        color: #d6ff00;
+      }
+
+      /* Hero background */
+      .hero {
+        position: relative;
+        min-height: 100vh;
+        background: url("./images/468c94aef59dd258800330c1604df4983231846e.gif")
+          center/cover no-repeat;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.55);
+      }
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 800px;
+      }
+      .hero h1 {
+        font-weight: 700;
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+      }
+      .hero .btn {
+        background: #d6ff00;
+        border-radius: 11px;
+        padding: 0.6rem 1.5rem;
+        font-weight: 600;
+        color: #000;
+      }
+      .hero .btn:hover {
+        background: #bde600;
+      }
+       @media (max-width: 560.98px) {
+        .brand{
+         font-size: 1.5rem;
+        }
+      }
+
+
+      
+      .green-box {
+        background-color: #00b140;
+        color: white;
+        padding: 2rem;
+        border-radius: 20px;
+        z-index: 2;
+        position: relative;
+        margin-bottom: 30px;
+        transition: all 0.3s ease;
+      }
+
+      .btn-yellow {
+        background-color: #ffd400;
+        color: black;
+        font-weight: bold;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+
+      .btn-yellow:hover {
+        background-color: #e6bf00;
+      }
+
+      .accordion-button::after {
+        filter: invert(1);
+      }
+
+      .image-col img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 0;
+      }
+
+      /* Large screens: overlap card into image */
+      @media (min-width: 992px) {
+        .green-box {
+          margin-left: 300px; /* overlap amount */
+          width: 400px;
+        }
+        .image-col img {
+          height: 600px;
+          object-fit: cover;
+        }
+      }
+
+      
+      @media (max-width: 991.98px) {
+        .green-box {
+          width: 100%;
+          margin-left: 0;
+        }
+      }
+
+      
+      @media (max-width: 575.98px) {
+        .green-box {
+          width: 100%;
+          margin-left: 0;
+          padding: 1.5rem;
+        }
+        .image-col img {
+          height: auto;
+        }
+      }
+
+
+      
+      .gallery-section {
+        padding: 60px 0;
+        max-width: 100%;
+        margin: 0 auto;
+        position: relative; /* We remove overflow hidden from here so button can be outside */
+      }
+      .gallery-title {
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #2cbf59;
+        margin-bottom: 40px;
+      }
+      .container-fluid.px-0 {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+      .gallery-wrapper {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+      }
+      .gallery-inner {
+        display: flex;
+        gap: 30px;
+        transition: transform 0.4s ease-in-out;
+        will-change: transform; /* width auto so it can be wide enough for sliding */
+      }
+      .gallery-item {
+        flex: 0 0 calc((100% - 15px) / 4);
+        border-radius: 12px;
+        overflow: hidden;
+        position: relative;
+        box-sizing: border-box;
+      }
+      .gallery-img {
+        width: 500px;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 12px;
+        display: block;
+        transition: transform 0.3s ease;
+      }
+      .gallery-img:hover {
+        transform: scale(1.05);
+      } /* Responsive */
+      @media (max-width: 991.98px) {
+        .gallery-item {
+          flex: 0 0 50%;
+        }
+      }
+      @media (max-width: 575.98px) {
+        .gallery-item {
+          flex: 0 0 100%;
+        }
+      } /* Next Button */
+      .btn-next {
+        position: absolute;
+        top: 50%;
+        right: 5%;
+        transform: translate(50%, -50%);
+        background-color: #2cbf59;
+        border: none;
+        color: white;
+        
+        border-radius: 50px;
+        font-weight: bold;
+        cursor: pointer;
+        user-select: none;
+        z-index: 10;
+        transition: background-color 0.3s ease;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+      }
+      .btn-next:hover {
+        background-color: #239842;
+      }
+      .gallery-section {
+        padding-left: 0;
+        padding-right: 0;
+        margin-right: 0;
+        max-width: 1400px; /* if you want to limit width */
+      }
+
+
+       .brand-name {
+      font-size: 3rem;
+      font-weight: 300;
+      font-family: 'Poppins', sans-serif;
+    }
+    .brand-name span {
+      font-weight: 700;
+      font-family: 'Times New Roman', serif;
+    }
+    .social-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background-color: #00b050;
+      color: #fff;
+      font-size: 1.5rem;
+      margin: 0 8px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    .social-icons a:hover {
+      background-color: #009944;
+      transform: scale(1.1);
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #000;
+      font-size: 1.1rem;
+      margin: 0 15px;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover {
+      color: #00b050;
+    }
