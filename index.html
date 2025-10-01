@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Creative Coder — Header + Hero</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+    }
+
+    /* Header sits over hero */
+    header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+      padding: 0 1rem;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: .75rem 0;
+    }
+    .brand {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #d6ff00;
+    }
+    .contact-btn {
+      background: #d6ff00;
+      border-radius: 25px;
+      padding: .4rem 1rem;
+      font-weight: 600;
+      color: #000;
+      text-decoration: none;
+    }
+    .contact-btn:hover { background: #bde600; }
+
+    .header-nav {
+      border-top: 1px solid rgba(255,255,255,.3);
+      border-bottom: 1px solid rgba(255,255,255,.3);
+    }
+    .header-nav .nav-link {
+      color: #fff;
+      font-weight: 500;
+      padding: .75rem 1rem;
+    }
+    .header-nav .nav-link:hover {
+      color: #d6ff00;
+    }
+
+    /* Hero background */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      background: url('./images/468c94aef59dd258800330c1604df4983231846e.gif') center/cover no-repeat;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,.55);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+    }
+    .hero h1 {
+      font-weight: 700;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .hero .btn {
+      background: #d6ff00;
+      border-radius: 25px;
+      padding: .6rem 1.5rem;
+      font-weight: 600;
+      color: #000;
+    }
+    .hero .btn:hover {
+      background: #bde600;
+    }
+  </style>
+</head>
+<body>
+
+<header class="container-fluid">
+  <!-- Row 1 -->
+  <div class="header-top">
+    <i class="bi bi-search text-white fs-5"></i>
+    <div class="brand">Creative Coder</div>
+    <div class="d-flex align-items-center gap-3">
+      <a href="#" class="contact-btn">CONTACT US →</a>
+      <i class="bi bi-person text-white fs-5"></i>
+    </div>
+  </div>
+
+  <!-- Row 2 -->
+  <nav class="header-nav">
+    <ul class="nav justify-content-center flex-wrap">
+      <li class="nav-item"><a class="nav-link" href="#">For Today</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Teaching Academy</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Daily Routines</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Emotion Racket</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Pep Talks</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">FBTL Test</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Character</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Player's Box</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Archive</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>An Emotional Health and Wellness Program for Tennis Competitors</h1>
+    <a href="#" class="btn">START FREE TRIAL →</a>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Card Overlap Right Image</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .green-box {
+      background-color: #00B140;
+      color: white;
+      padding: 2rem;
+      border-radius: 20px;
+      z-index: 2;
+      position: relative;
+      
+    }
+
+    .btn-yellow {
+      background-color: #FFD400;
+      color: black;
+      font-weight: bold;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+
+    .btn-yellow:hover {
+      background-color: #e6bf00;
+    }
+
+    .accordion-button::after {
+      filter: invert(1);
+    }
+
+    .image-col {
+      padding-right: 0;
+    }
+
+    .image-col img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 0;
+    }
+
+    /* Overlap on large screens */
+    @media (min-width: 992px) {
+      .green-box {
+        margin-left: 500px; /* Overlap into image column */
+        width: 350px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid my-5">
+  <div class="row align-items-center">
+    
+    <!-- Left Column: Green Card -->
+    <div class="col-lg-6 position-relative">
+      <div class="green-box shadow-lg">
+        <h3>Why Work With a<br>Sports Psychologist?</h3>
+        <ul class="mt-3">
+          <li>✅ Improve focus & concentration under pressure</li>
+          <li>✅ Build resilience after losses & setbacks</li>
+        </ul>
+
+        <div class="accordion mt-4" id="faqAccordion">
+          <div class="accordion-item bg-transparent border-0">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button collapsed bg-transparent text-white px-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                01 &nbsp; What does FBTL stand for?
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-white px-0">
+                FBTL stands for First Ball to Last — a mindset that emphasizes emotional resilience and focus from start to finish.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item bg-transparent border-0">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed bg-transparent text-white px-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                02 &nbsp; Who is FBTL for?
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-white px-0">
+                FBTL is for athletes, coaches, and teams looking to improve mental performance.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn btn-yellow mt-4">READ MORE →</button>
+      </div>
+    </div>
+
+    <!-- Right Column: Image (flush right) -->
+    <div class="col-lg-6 image-col text-end">
+      <img src="./images/69ad7fb5699e7861a74557be537d30927e6c4124.jpg" class="img-fluid" alt="Therapist and Client">
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
